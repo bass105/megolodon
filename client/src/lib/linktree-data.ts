@@ -20,7 +20,7 @@ export const linktreeData: LinktreeData = {
       title: "PPDB MA 2025",
       url: "https://s.id/PPDB_MA_2025",
       description: "s.id/PPDB_MA_2025",
-      icon: "file-alt",
+      icon: "user-plus",
     },
   ],
   instagram: [
