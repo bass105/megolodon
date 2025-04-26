@@ -147,16 +147,8 @@ export default function Home() {
             className="relative"
           >
             <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-3/4 bg-gradient-to-b from-transparent via-neon-yellow to-transparent"></div>
-            <motion.a 
-              href="https://maps.app.goo.gl/vqVNtX7fB5uKFFpL9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-cyber-navy/80 to-cyber-blue/40 backdrop-blur-sm rounded-md p-4 mb-3 transition-all duration-300 block border border-neon-yellow/20 overflow-hidden link-card relative"
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 0 15px rgba(255, 230, 0, 0.3)",
-                borderColor: "rgba(255, 230, 0, 0.5)"
-              }}
+            <motion.div 
+              className="bg-gradient-to-r from-cyber-navy/80 to-cyber-blue/40 backdrop-blur-sm rounded-md p-4 mb-3 transition-all duration-300 block border border-neon-yellow/20 overflow-hidden relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
@@ -186,12 +178,11 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* Map pin with pulsing effect */}
+                {/* Location display */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center relative">
-                    <div className="absolute -inset-4 rounded-full bg-neon-yellow/20 animate-ping"></div>
-                    <i className="fas fa-map-marked-alt text-4xl text-neon-yellow mb-2 filter drop-shadow-lg"></i>
-                    <p className="font-orbitron text-sm text-transparent bg-clip-text bg-gradient-to-r from-neon-yellow via-white to-neon-yellow animate-pulse-slow">Buka di Google Maps</p>
+                    <i className="fas fa-location-dot text-4xl text-neon-yellow mb-2 filter drop-shadow-lg"></i>
+                    <p className="font-orbitron text-sm text-transparent bg-clip-text bg-gradient-to-r from-neon-yellow via-white to-neon-yellow">Lokasi Sekolah</p>
                   </div>
                 </div>
 
@@ -201,7 +192,7 @@ export default function Home() {
                 <div className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-neon-yellow/50"></div>
                 <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-neon-yellow/50"></div>
               </div>
-            </motion.a>
+            </motion.div>
           </motion.section>
         </main>
 
