@@ -38,7 +38,7 @@ const ProfileHeader: React.FC = () => {
           style={{ animationDelay: '0.5s' }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-navy/50 to-transparent backdrop-blur-sm"></div>
-          <div className="relative z-10 w-full h-full p-1">
+          <div className="relative z-10 w-full h-full p-0.5">
             <img 
               src={besLogo}
               alt="BES MA Logo" 
