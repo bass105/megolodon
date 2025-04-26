@@ -39,6 +39,11 @@ const LinkCard: React.FC<LinkCardProps> = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
+      <div className={`w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br ${iconBgFrom} ${iconBgTo} flex items-center justify-center group-hover:${iconBgTo} group-hover:${iconBgFrom} transition-all duration-300 shadow-inner mr-4`}>
+        <i className={`fa${iconType === 'brand' ? 'b' : 's'} fa-${icon} text-xl`}></i>
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 rounded-full"></div>
+      </div>
+      
       {/* Animated light effect */}
       <div className="absolute inset-0 overflow-hidden rounded-md pointer-events-none">
         <div className="absolute -top-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent animate-pulse-slow"></div>
