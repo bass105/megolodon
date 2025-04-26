@@ -16,16 +16,16 @@ const ProfileHeader: React.FC = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-navy/50 to-transparent backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-navy to-transparent backdrop-blur-sm"></div>
           <div className="relative z-10 w-full h-full p-1">
             <img 
               src={maLogo}
               alt="MA Almanshuriyah Logo" 
-              className="w-full h-full object-contain" 
+              className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(0,198,255,0.8)]" 
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-white/30 pointer-events-none"></div>
           </div>
-          <div className="absolute inset-0 border border-neon-blue/30 rounded-md"></div>
+          <div className="absolute inset-0 border-2 border-neon-blue/70 rounded-md shadow-[0_0_15px_rgba(0,198,255,0.5)]"></div>
           <div className="absolute h-1 w-full bottom-0 left-0 bg-gradient-to-r from-transparent via-neon-blue to-transparent animate-pulse"></div>
         </motion.div>
         
@@ -37,16 +37,16 @@ const ProfileHeader: React.FC = () => {
           transition={{ delay: 0.2 }}
           style={{ animationDelay: '0.5s' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-navy/50 to-transparent backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-navy to-transparent backdrop-blur-sm"></div>
           <div className="relative z-10 w-full h-full p-0">
             <img 
               src={besLogo}
               alt="BES MA Logo" 
-              className="w-full h-full object-contain" 
+              className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(255,0,166,0.8)]" 
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-white/30 pointer-events-none"></div>
           </div>
-          <div className="absolute inset-0 border border-neon-purple/30 rounded-md"></div>
+          <div className="absolute inset-0 border-2 border-neon-purple/70 rounded-md shadow-[0_0_15px_rgba(255,0,166,0.5)]"></div>
           <div className="absolute h-1 w-full bottom-0 left-0 bg-gradient-to-r from-transparent via-neon-purple to-transparent animate-pulse"></div>
         </motion.div>
       </div>
