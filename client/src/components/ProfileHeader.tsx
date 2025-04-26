@@ -102,7 +102,7 @@ const ProfileHeader: React.FC = () => {
         transition={{ delay: 0.4 }}
       >
         {/* Tag decoration element */}
-        <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-[8px] font-mono text-cyberpunk-yellow tracking-widest">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-[8px] font-mono text-cyberpunk-yellow tracking-widest">
           [SYSTEM//AUTHENTICATED]
         </div>
         
