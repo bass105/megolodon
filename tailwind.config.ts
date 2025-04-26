@@ -13,6 +13,16 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "cyber-dark": "#0d1930",
+        "cyber-navy": "#162138",
+        "cyber-blue": "#00c6ff",
+        "neon-blue": "#00c6ff",
+        "neon-pink": "#ff00a6",
+        "neon-purple": "#9900ff",
+        "neon-green": "#00ff8f",
+        "neon-yellow": "#ffe600", 
+        "cyberpunk-red": "#ff283c",
+        "cyberpunk-yellow": "#e5df12",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -83,6 +93,11 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 6s ease-in-out infinite",
+        "cyberpunk-scanline": "cyberpunk-scanline 10s ease-in-out infinite",
+        "glitch": "glitch 1s linear infinite alternate",
+        "silver-text": "silver-text 3s linear infinite",
       },
     },
   },

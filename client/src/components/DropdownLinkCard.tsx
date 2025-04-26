@@ -40,27 +40,41 @@ const DropdownLinkCard: React.FC<DropdownLinkCardProps> = ({
       {/* Main card that toggles dropdown */}
       <motion.div
         onClick={toggleDropdown}
-        className={`cyber-border bg-gradient-to-r from-cyber-navy/80 to-cyber-blue/40 backdrop-blur-sm rounded-md p-4 flex items-center gap-4 ${hoverShadow} transition-all duration-300 cursor-pointer group`}
+        className={`cyberpunk-border cyberpunk2077-clip relative bg-gradient-to-r from-cyber-navy/80 to-cyber-blue/40 backdrop-blur-sm p-4 flex items-center gap-4 ${hoverShadow} transition-all duration-300 cursor-pointer group overflow-hidden`}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         initial={{ opacity: 0.9 }}
         animate={{ 
           opacity: 1,
           boxShadow: isOpen 
-            ? `0 0 15px rgba(${iconColor.includes('blue') ? '0, 198, 255' : iconColor.includes('pink') ? '255, 0, 166' : iconColor.includes('green') ? '0, 255, 143' : '255, 230, 0'}, 0.5)` 
+            ? `0 0 15px rgba(${iconColor.includes('blue') ? '0, 198, 255' : iconColor.includes('pink') ? '255, 0, 166' : iconColor.includes('green') ? '0, 255, 143' : iconColor.includes('red') ? '255, 40, 60' : '255, 230, 0'}, 0.5)` 
             : 'none'
         }}
         transition={{ duration: 0.3 }}
       >
-        <div className={`w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br ${iconBgFrom} ${iconBgTo} flex items-center justify-center group-hover:${iconBgTo} group-hover:${iconBgFrom} transition-all duration-300`}>
+        {/* Cyberpunk 2077 Style Elements */}
+        <div className="absolute top-0 right-0 w-6 h-1 bg-cyberpunk-yellow"></div>
+        <div className="absolute bottom-0 left-0 w-6 h-1 bg-cyberpunk-red"></div>
+        
+        {/* The icon */}
+        <div className={`w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br ${iconBgFrom} ${iconBgTo} flex items-center justify-center group-hover:${iconBgTo} group-hover:${iconBgFrom} transition-all duration-300 relative`}>
           <i className={`fa${iconType === 'brand' ? 'b' : 's'} fa-${icon} text-xl`}></i>
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 rounded-full"></div>
         </div>
+        
+        {/* Text content */}
         <div className="flex-grow">
-          <h4 className="font-orbitron font-semibold">{title}</h4>
-          <p className="text-sm text-gray-300">{links.length} link tersedia</p>
+          <h4 className="font-orbitron font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 group-hover:from-cyberpunk-yellow group-hover:to-white transition-all duration-300">{title}</h4>
+          <div className="flex items-center text-sm">
+            <span className="text-gray-300 mr-1">{links.length}</span>
+            <span className="text-xs text-cyberpunk-yellow font-mono">LINK_AVAILABLE</span>
+          </div>
         </div>
-        <div className={`${iconColor} transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+        
+        {/* Arrow indicator */}
+        <div className={`${iconColor} transition-all duration-300 ${isOpen ? 'rotate-180 scale-110' : ''} relative`}>
           <i className="fas fa-chevron-down"></i>
+          <div className="absolute -inset-2 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
       </motion.div>
 
