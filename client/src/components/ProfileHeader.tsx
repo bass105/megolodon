@@ -58,7 +58,7 @@ const ProfileHeader: React.FC = () => {
       </div>
       
       <motion.h2 
-        className="font-orbitron font-bold text-xl text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-neon-green via-white to-neon-green animate-pulse-slow"
+        className="font-orbitron font-bold text-xl text-center mb-6 text-neon-blue shadow-glow"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
