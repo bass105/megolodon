@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import maLogo from '../assets/ma logo.png';
+import besLogo from '../assets/aeefee3a-c0b7-43f3-b174-7d51fae795df_20231220_043108_0000.png';
 
 const ProfileHeader: React.FC = () => {
   return (
@@ -28,7 +30,7 @@ const ProfileHeader: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-navy/50 to-transparent backdrop-blur-sm"></div>
           <div className="relative z-10 w-full h-full p-1">
             <img 
-              src="/attached_assets/ma%20logo.png" 
+              src={maLogo}
               alt="MA Almanshuriyah Logo" 
               className="w-full h-full object-contain" 
             />
@@ -49,7 +51,7 @@ const ProfileHeader: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-navy/50 to-transparent backdrop-blur-sm"></div>
           <div className="relative z-10 w-full h-full p-2">
             <img 
-              src="/attached_assets/aeefee3a-c0b7-43f3-b174-7d51fae795df_20231220_043108_0000.png" 
+              src={besLogo}
               alt="BES MA Logo" 
               className="w-full h-full object-contain" 
             />
