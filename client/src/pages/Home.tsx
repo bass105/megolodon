@@ -17,26 +17,27 @@ export default function Home() {
     <div className="min-h-screen w-full flex flex-col items-center pb-16 relative overflow-hidden">
       {/* Scan Line Effect */}
       <div className="scan-line opacity-20 fixed inset-0 pointer-events-none z-50"></div>
-      
+
       {/* Grid Background */}
       <GridBackground />
-      
+
       {/* Cyberpunk Decorative Elements */}
       <CyberpunkEffects />
 
       {/* Main Container */}
       <div className="w-full max-w-md px-4 flex flex-col items-center z-10">
         {/* Title at the top - Explicitly added here */}
+        <title>BES MA Links</title> {/* Added title element for better SEO and visibility */}
         <div className="w-full text-center relative mb-6 mt-6">
           <h1 className="font-orbitron font-bold text-4xl text-center mb-1 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue animate-pulse-slow z-20 relative">
             LINK TAUTAN
           </h1>
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-xl opacity-50 bg-gradient-to-r from-neon-blue/0 via-neon-blue/20 to-neon-blue/0 rounded-full"></div>
         </div>
-        
+
         {/* Header Section */}
         <ProfileHeader />
-        
+
         {/* Main Content */}
         <main className="w-full space-y-6 backdrop-blur-sm bg-gradient-to-b from-cyber-navy/30 to-transparent p-4 rounded-lg border border-neon-blue/20">
           {/* Registration Section */}
@@ -82,7 +83,7 @@ export default function Home() {
               gradientFrom="from-neon-pink" 
               gradientTo="to-neon-purple" 
             />
-            
+
             {/* Instagram Dropdown */}
             <DropdownLinkCard
               title="Instagram"
@@ -94,7 +95,7 @@ export default function Home() {
               iconColor="text-neon-pink"
               links={linktreeData.instagram}
             />
-            
+
             {/* Facebook Dropdown */}
             <DropdownLinkCard
               title="Facebook"
@@ -106,7 +107,7 @@ export default function Home() {
               iconColor="text-neon-blue"
               links={linktreeData.facebook}
             />
-            
+
             {/* YouTube Dropdown */}
             <DropdownLinkCard
               title="YouTube"
@@ -118,7 +119,7 @@ export default function Home() {
               iconColor="text-neon-pink"
               links={linktreeData.youtube}
             />
-            
+
             {/* TikTok Dropdown */}
             <DropdownLinkCard
               title="TikTok"
@@ -191,7 +192,7 @@ export default function Home() {
                 <div className="absolute -top-1 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent animate-pulse-slow"></div>
                 <div className="absolute top-0 -right-1 w-px h-full bg-gradient-to-b from-transparent via-white/30 to-transparent animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
               </div>
-              
+
               <div className="flex items-center gap-4 mb-3">
                 <div className="w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br from-neon-yellow to-yellow-600 flex items-center justify-center shadow-inner relative">
                   <i className="fas fa-map-marker-alt text-xl"></i>
@@ -202,7 +203,7 @@ export default function Home() {
                   <p className="text-sm text-gray-300">Jalan raya Pagelaran km 61, Cipari, Pagelaran, Cianjur</p>
                 </div>
               </div>
-              
+
               <div className="rounded-md overflow-hidden border border-neon-yellow/30 grid-bg h-36 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyber-blue/40 to-transparent backdrop-blur-sm"></div>
                 <div className="absolute inset-0 grid grid-cols-[repeat(20,1fr)] grid-rows-[repeat(20,1fr)] opacity-30">
@@ -210,7 +211,7 @@ export default function Home() {
                     <div key={i} className="border border-neon-yellow/20"></div>
                   ))}
                 </div>
-                
+
                 {/* Map pin with pulsing effect */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center relative">
@@ -219,7 +220,7 @@ export default function Home() {
                     <p className="font-orbitron text-sm text-transparent bg-clip-text bg-gradient-to-r from-neon-yellow via-white to-neon-yellow animate-pulse-slow">Buka di Google Maps</p>
                   </div>
                 </div>
-                
+
                 {/* Decorative corner elements */}
                 <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-neon-yellow/50"></div>
                 <div className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-neon-yellow/50"></div>
@@ -239,16 +240,16 @@ export default function Home() {
         >
           <div className="relative p-4 backdrop-blur-sm bg-gradient-to-b from-cyber-navy/40 to-transparent rounded-lg border border-neon-blue/10">
             <p className="font-rajdhani text-gray-300">&copy; 2025 MA Almanshuriyah | <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue animate-pulse-slow">Cyberpunk Link Tree</span></p>
-            
+
             <div className="my-2 w-full h-px bg-gradient-to-r from-transparent via-neon-blue/50 to-transparent"></div>
-            
+
             <a href="#" className="inline-block font-orbitron text-xs uppercase tracking-wider text-gray-400 hover:text-neon-blue transition-colors group">
               <span className="inline-flex items-center">
                 <i className="fas fa-hashtag mr-1 group-hover:scale-110 transition-transform"></i>
                 <span className="group-hover:tracking-wider transition-all">MA_Almanshuriyah2025</span>
               </span>
             </a>
-            
+
             {/* Decorative corner elements */}
             <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-neon-blue/30"></div>
             <div className="absolute top-0 right-0 w-4 h-4 border-r border-t border-neon-blue/30"></div>
