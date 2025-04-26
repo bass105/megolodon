@@ -407,6 +407,204 @@
   }
 }
 
+/* Cyberpunk 2077 Specific Effects */
+.glitch-text {
+  position: relative;
+  animation: glitch 1s infinite;
+}
+
+.cyberpunk-2077-scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunk-2077-scanlines::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(229, 223, 18, 0.03) 3px,
+    rgba(229, 223, 18, 0.03) 3px
+  );
+  pointer-events: none;
+  z-index: 30;
+}
+
+.cyberpunk-2077-title {
+  position: relative;
+  color: white;
+}
+
+.cyberpunk-2077-title::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: 2px 0 #ff283c;
+  top: 0;
+  color: white;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: cyberpunk-2077-noise-before 3s infinite linear alternate-reverse;
+}
+
+.cyberpunk-2077-title::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -2px 0 #e5df12;
+  top: 0;
+  color: white;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: cyberpunk-2077-noise-after 2s infinite linear alternate-reverse;
+}
+
+@keyframes cyberpunk-2077-noise-before {
+  0% {
+    clip: rect(86px, 9999px, 29px, 0);
+  }
+  5% {
+    clip: rect(48px, 9999px, 92px, 0);
+  }
+  10% {
+    clip: rect(1px, 9999px, 83px, 0);
+  }
+  15% {
+    clip: rect(82px, 9999px, 11px, 0);
+  }
+  20% {
+    clip: rect(16px, 9999px, 95px, 0);
+  }
+  25% {
+    clip: rect(65px, 9999px, 39px, 0);
+  }
+  30% {
+    clip: rect(100px, 9999px, 87px, 0);
+  }
+  35% {
+    clip: rect(100px, 9999px, 42px, 0);
+  }
+  40% {
+    clip: rect(52px, 9999px, 11px, 0);
+  }
+  45% {
+    clip: rect(59px, 9999px, 2px, 0);
+  }
+  50% {
+    clip: rect(36px, 9999px, 12px, 0);
+  }
+  55% {
+    clip: rect(61px, 9999px, 18px, 0);
+  }
+  60% {
+    clip: rect(50px, 9999px, 85px, 0);
+  }
+  65% {
+    clip: rect(25px, 9999px, 97px, 0);
+  }
+  70% {
+    clip: rect(23px, 9999px, 5px, 0);
+  }
+  75% {
+    clip: rect(62px, 9999px, 46px, 0);
+  }
+  80% {
+    clip: rect(97px, 9999px, 56px, 0);
+  }
+  85% {
+    clip: rect(33px, 9999px, 38px, 0);
+  }
+  90% {
+    clip: rect(34px, 9999px, 90px, 0);
+  }
+  95% {
+    clip: rect(29px, 9999px, 3px, 0);
+  }
+  100% {
+    clip: rect(85px, 9999px, 6px, 0);
+  }
+}
+
+@keyframes cyberpunk-2077-noise-after {
+  0% {
+    clip: rect(49px, 9999px, 38px, 0);
+  }
+  5% {
+    clip: rect(73px, 9999px, 19px, 0);
+  }
+  10% {
+    clip: rect(9px, 9999px, 25px, 0);
+  }
+  15% {
+    clip: rect(50px, 9999px, 65px, 0);
+  }
+  20% {
+    clip: rect(28px, 9999px, 86px, 0);
+  }
+  25% {
+    clip: rect(64px, 9999px, 80px, 0);
+  }
+  30% {
+    clip: rect(95px, 9999px, 100px, 0);
+  }
+  35% {
+    clip: rect(32px, 9999px, 91px, 0);
+  }
+  40% {
+    clip: rect(85px, 9999px, 42px, 0);
+  }
+  45% {
+    clip: rect(56px, 9999px, 15px, 0);
+  }
+  50% {
+    clip: rect(63px, 9999px, 97px, 0);
+  }
+  55% {
+    clip: rect(88px, 9999px, 88px, 0);
+  }
+  60% {
+    clip: rect(77px, 9999px, 62px, 0);
+  }
+  65% {
+    clip: rect(17px, 9999px, 79px, 0);
+  }
+  70% {
+    clip: rect(32px, 9999px, 54px, 0);
+  }
+  75% {
+    clip: rect(33px, 9999px, 63px, 0);
+  }
+  80% {
+    clip: rect(93px, 9999px, 46px, 0);
+  }
+  85% {
+    clip: rect(5px, 9999px, 6px, 0);
+  }
+  90% {
+    clip: rect(34px, 9999px, 1px, 0);
+  }
+  95% {
+    clip: rect(2px, 9999px, 29px, 0);
+  }
+  100% {
+    clip: rect(89px, 9999px, 99px, 0);
+  }
+}
+
+.johnny-silver-text {
+  background: linear-gradient(to right, #e5df12 20%, #f0f0f0 40%, #00c6ff 60%, #e5df12 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: silver-text 3s linear infinite;
+}
+
 .cyberpunk2077-clip {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 95% 100%, 0 100%);

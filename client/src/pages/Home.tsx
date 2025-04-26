@@ -25,23 +25,54 @@ export default function Home() {
 
       {/* Main Container */}
       <div className="w-full max-w-md px-4 flex flex-col items-center z-10">
-        {/* Title at the top - Cyberpunk 2077 Style */}
-        <div className="w-full text-center relative mb-8 mt-6 cyberpunk-scanline">
-          <div className="absolute inset-0 cyberpunk-relic-effect"></div>
-          <h1 
-            className="font-orbitron font-bold text-4xl text-center mb-1 tracking-wider cyberpunk-glitch z-20 relative cyberpunk2077-clip"
-            data-text="LINK TAUTAN"
-          >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyberpunk-red via-cyberpunk-yellow to-cyberpunk-red">
-              LINK TAUTAN
-            </span>
-          </h1>
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-xl opacity-50 bg-gradient-to-r from-cyberpunk-red/0 via-cyberpunk-red/20 to-cyberpunk-red/0 rounded-full"></div>
+        {/* Title at the top - Enhanced Cyberpunk 2077 Style */}
+        <div className="w-full text-center relative mb-8 mt-6 overflow-hidden">
+          {/* Scanline effect overlay */}
+          <div className="absolute inset-0 cyberpunk-scanline pointer-events-none z-30 opacity-30"></div>
           
-          {/* Decorative Cyberpunk 2077 elements */}
-          <div className="absolute top-0 right-0 w-8 h-1 bg-cyberpunk-yellow"></div>
-          <div className="absolute bottom-0 left-0 w-8 h-1 bg-cyberpunk-red"></div>
-          <div className="text-xs tracking-widest text-cyberpunk-yellow font-rajdhani uppercase mt-1 triangle-decoration relative">NIGHT-CITY EDITION v2.0.7.7</div>
+          {/* Main title container */}
+          <div className="relative py-3 px-8 inline-block">
+            {/* Cyberpunk 2077 decorative elements */}
+            <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-80 bg-gradient-to-r from-cyber-dark/80 to-cyber-dark/80 backdrop-blur-sm cyberpunk2077-clip"></div>
+            <div className="absolute top-0 right-0 w-12 h-1 bg-cyberpunk-yellow"></div>
+            <div className="absolute bottom-0 left-0 w-12 h-1 bg-cyberpunk-red"></div>
+            <div className="absolute top-[3px] left-[3px] w-3 h-3 border-l-2 border-t-2 border-cyberpunk-yellow/70"></div>
+            <div className="absolute top-[3px] right-[3px] w-3 h-3 border-r-2 border-t-2 border-cyberpunk-red/70"></div>
+            <div className="absolute bottom-[3px] left-[3px] w-3 h-3 border-l-2 border-b-2 border-cyberpunk-red/70"></div>
+            <div className="absolute bottom-[3px] right-[3px] w-3 h-3 border-r-2 border-b-2 border-cyberpunk-yellow/70"></div>
+            
+            {/* Glitch text effect */}
+            <h1 className="relative font-orbitron font-black text-4xl tracking-wider">
+              {/* Background version for glitch effect */}
+              <span className="absolute -inset-x-1 top-[0.05em] left-[0.02em] text-cyberpunk-red opacity-70 blur-[0.5px] z-0">LINK TAUTAN</span>
+              <span className="absolute -inset-x-1 top-[-0.05em] left-[-0.02em] text-cyberpunk-yellow opacity-70 blur-[0.5px] z-0">LINK TAUTAN</span>
+              
+              {/* Main visible title */}
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyberpunk-yellow via-white to-cyberpunk-red">
+                LINK TAUTAN
+              </span>
+              
+              {/* Animated elements for cyberpunk effect */}
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] animate-[card-shine_3s_linear_infinite] z-20"></span>
+            </h1>
+            
+            {/* Subtitle in Cyberpunk 2077 style */}
+            <div className="flex items-center justify-center mt-1 gap-2">
+              <div className="h-px w-12 bg-cyberpunk-yellow/70"></div>
+              <div className="text-xs tracking-widest text-cyberpunk-yellow font-mono uppercase relative">
+                NIGHT-CITY EDITION v2.0.7.7
+              </div>
+              <div className="h-px w-12 bg-cyberpunk-red/70"></div>
+            </div>
+          </div>
+          
+          {/* Cyberpunk 2077 style badge indicator */}
+          <div className="absolute -top-1 left-1/2 -translate-x-1/2 bg-cyberpunk-yellow text-cyber-dark text-[9px] font-mono uppercase tracking-wider py-0.5 px-2 font-bold">
+            SYSTEM//READY
+          </div>
+          
+          {/* Background glow effect */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-xl opacity-30 bg-gradient-to-r from-cyberpunk-red/0 via-cyberpunk-yellow/20 to-cyberpunk-red/0 -z-10"></div>
         </div>
 
         {/* Header Section */}
