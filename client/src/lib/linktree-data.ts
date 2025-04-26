@@ -17,7 +17,7 @@ interface LinktreeData {
 export const linktreeData: LinktreeData = {
   registration: [
     {
-      title: "PPDB MA 2025",
+      title: "Pendaftaran",
       url: "https://s.id/PPDB_MA_2025",
       description: "s.id/PPDB_MA_2025",
       icon: "user-plus",
