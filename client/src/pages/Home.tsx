@@ -46,19 +46,16 @@ export default function Home() {
             className="relative"
           >
             <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-3/4 bg-gradient-to-b from-transparent via-neon-blue to-transparent"></div>
-            {linktreeData.registration.map((link, index) => (
-              <LinkCard 
-                key={`registration-${index}`}
-                title={link.title}
-                url={link.url}
-                description={link.description}
-                icon={link.icon}
-                iconBgFrom="from-neon-blue"
-                iconBgTo="to-neon-purple"
-                hoverShadow="hover:shadow-neon-blue"
-                iconColor="text-neon-blue"
-              />
-            ))}
+            <DropdownLinkCard
+              title="Pendaftaran"
+              icon="user-plus"
+              iconType="regular"
+              iconBgFrom="from-neon-blue"
+              iconBgTo="to-neon-purple"
+              hoverShadow="hover:shadow-neon-blue"
+              iconColor="text-neon-blue"
+              links={linktreeData.registration}
+            />
           </motion.section>
 
           {/* Social Media Section - Instagram */}
