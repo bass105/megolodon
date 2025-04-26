@@ -1,3 +1,4 @@
+
 interface LinkItem {
   title: string;
   url: string;
@@ -20,7 +21,7 @@ export const linktreeData: LinktreeData = {
       title: "Pendaftaran",
       url: "https://s.id/PPDB_MA_2025",
       description: "s.id/PPDB_MA_2025",
-      icon: "user-plus",
+      icon: "user-graduate",
     },
   ],
   instagram: [
@@ -28,13 +29,13 @@ export const linktreeData: LinktreeData = {
       title: "BES Matcha",
       url: "https://www.instagram.com/besmatcha_?igsh=MTN4OWt1djJpYXpxZA==",
       description: "@besmatcha_",
-      icon: "instagram",
+      icon: "camera",
     },
     {
       title: "Matcha 105",
       url: "https://www.instagram.com/matcha105?igsh=dWNxaWIxY3BtcTNo",
       description: "@matcha105",
-      icon: "instagram",
+      icon: "camera-retro",
     },
   ],
   facebook: [
@@ -42,13 +43,13 @@ export const linktreeData: LinktreeData = {
       title: "OSIS MA Almanshuriyah",
       url: "https://www.facebook.com/osis.maalmansuriyah",
       description: "osis.maalmansuriyah",
-      icon: "facebook-f",
+      icon: "users",
     },
     {
       title: "MA Almanshuriyah",
       url: "https://www.facebook.com/profile.php?id=100010475287342",
       description: "Halaman Facebook Sekolah",
-      icon: "facebook-f",
+      icon: "school",
     },
   ],
   youtube: [
@@ -56,7 +57,7 @@ export const linktreeData: LinktreeData = {
       title: "BES MA Almanshuriyah",
       url: "https://youtube.com/@besmaalmanshuriyah?si=1vtHSK8pgHLUFV02",
       description: "@besmaalmanshuriyah",
-      icon: "youtube",
+      icon: "video",
     },
   ],
   tiktok: [
@@ -64,7 +65,7 @@ export const linktreeData: LinktreeData = {
       title: "Alman 105",
       url: "https://www.tiktok.com/@alman_105?_t=ZS-8tjpulg8wLA&_r=1",
       description: "@alman_105",
-      icon: "tiktok",
+      icon: "music",
     },
   ],
   whatsapp: [
