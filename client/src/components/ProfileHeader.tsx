@@ -5,18 +5,7 @@ import besLogo from '../assets/aeefee3a-c0b7-43f3-b174-7d51fae795df_20231220_043
 const ProfileHeader: React.FC = () => {
   return (
     <header className="w-full max-w-md px-4 pt-10 mb-8 flex flex-col items-center relative">
-      {/* Title at the top */}
-      <motion.div
-        className="w-full text-center relative mb-4"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-      >
-        <h1 className="font-orbitron font-bold text-3xl text-center mb-1 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue animate-pulse-slow">
-          LINK TAUTAN
-        </h1>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-xl opacity-50 bg-gradient-to-r from-neon-blue/0 via-neon-blue/20 to-neon-blue/0 rounded-full"></div>
-      </motion.div>
+
       
       {/* Profile Logos Container with cyberpunk styling */}
       <div className="w-full flex justify-center items-center gap-6 mb-6">

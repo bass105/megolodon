@@ -26,6 +26,14 @@ export default function Home() {
 
       {/* Main Container */}
       <div className="w-full max-w-md px-4 flex flex-col items-center z-10">
+        {/* Title at the top - Explicitly added here */}
+        <div className="w-full text-center relative mb-6 mt-6">
+          <h1 className="font-orbitron font-bold text-4xl text-center mb-1 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue animate-pulse-slow z-20 relative">
+            LINK TAUTAN
+          </h1>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-xl opacity-50 bg-gradient-to-r from-neon-blue/0 via-neon-blue/20 to-neon-blue/0 rounded-full"></div>
+        </div>
+        
         {/* Header Section */}
         <ProfileHeader />
         

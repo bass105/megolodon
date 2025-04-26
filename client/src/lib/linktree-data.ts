@@ -66,19 +66,31 @@ export const linktreeData: LinktreeData = {
       description: "@alman_105",
       icon: "tiktok",
     },
+    {
+      title: "MA Almanshuriyah Official",
+      url: "https://www.tiktok.com/@almanshuriyah",
+      description: "@almanshuriyah",
+      icon: "tiktok",
+    },
   ],
   whatsapp: [
     {
       title: "Hariri DR, S.HI.",
       url: "https://wa.me/6285798989997",
       description: "+62 857-9898-9997",
-      icon: "whatsapp",
+      icon: "user-tie",
     },
     {
       title: "Sofitri, S.Pd.",
       url: "https://wa.me/6285795884228",
       description: "+62 857-9588-4228",
-      icon: "whatsapp",
+      icon: "user-graduate",
+    },
+    {
+      title: "Sekretariat",
+      url: "https://wa.me/628970007105",
+      description: "+62 897-0000-7105",
+      icon: "building",
     },
   ],
 };
