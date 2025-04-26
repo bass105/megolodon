@@ -78,38 +78,66 @@ const DropdownLinkCard: React.FC<DropdownLinkCardProps> = ({
         </div>
       </motion.div>
 
-      {/* Dropdown content */}
+      {/* Dropdown content - Cyberpunk 2077 style */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="mt-2 ml-4 space-y-2 border-l-2 pl-4 pt-1 pb-1"
-            style={{ borderColor: `var(--${iconColor.includes('blue') ? 'neon-blue' : iconColor.includes('pink') ? 'neon-pink' : iconColor.includes('green') ? 'neon-green' : 'neon-yellow'})` }}
+            className="mt-3 ml-4 space-y-3 pl-4 pt-2 pb-1 relative"
             initial={{ opacity: 0, height: 0, marginTop: 0 }}
             animate={{ opacity: 1, height: 'auto', marginTop: 8 }}
             exit={{ opacity: 0, height: 0, marginTop: 0 }}
             transition={{ duration: 0.3 }}
           >
+            {/* Cyberpunk border decoration */}
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-cyberpunk-yellow to-transparent"></div>
+            <div className="absolute left-0 top-0 w-3 h-0.5 bg-cyberpunk-yellow"></div>
+            <div className="absolute left-0 bottom-0 w-3 h-0.5 bg-cyberpunk-red"></div>
+            
+            {/* Dashed line decoration - Cyberpunk 2077 style */}
+            <div className="absolute left-2 top-0 bottom-0 w-px border-l border-dashed border-white/20"></div>
+            
+            {/* List of links */}
             {links.map((link, index) => (
               <motion.a
                 key={index}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`link-card backdrop-blur-md bg-gradient-to-r from-cyber-navy/40 to-transparent rounded-md p-3 flex items-center gap-3 hover:${hoverShadow} transition-all duration-300 block border border-transparent hover:border-${iconColor.split('-')[1]}/30`}
+                className="cyberpunk2077-clip relative backdrop-blur-md bg-gradient-to-r from-cyber-navy/40 to-transparent p-3 flex items-center gap-3 transition-all duration-300 block border border-transparent overflow-hidden group"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ x: 5, backgroundColor: 'rgba(13, 25, 48, 0.5)' }}
+                whileHover={{ 
+                  scale: 1.02, 
+                  backgroundColor: 'rgba(13, 25, 48, 0.6)',
+                  borderColor: `rgba(${iconColor.includes('blue') ? '0, 198, 255' : iconColor.includes('pink') ? '255, 0, 166' : iconColor.includes('green') ? '0, 255, 143' : '255, 230, 0'}, 0.3)`
+                }}
               >
-                <div className={`w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br ${iconBgFrom} ${iconBgTo} flex items-center justify-center text-white`}>
+                {/* Cyberpunk corner decorations */}
+                <div className="absolute top-0 right-0 w-4 h-0.5 bg-cyberpunk-yellow"></div>
+                <div className="absolute top-0 right-0 h-4 w-0.5 bg-cyberpunk-yellow"></div>
+                
+                {/* Scanning effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-1000 ease-in-out"></div>
+                
+                {/* Icon */}
+                <div className={`w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br ${iconBgFrom} ${iconBgTo} flex items-center justify-center text-white relative overflow-hidden`}>
                   <i className={`fa${iconType === 'brand' ? 'b' : 's'} fa-${link.icon || icon} text-sm`}></i>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 rounded-full"></div>
                 </div>
+                
+                {/* Text Content */}
                 <div className="flex-grow">
-                  <h4 className="text-sm font-orbitron">{link.title}</h4>
-                  <p className="text-xs text-gray-300 truncate">{link.description}</p>
+                  <h4 className="text-sm font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 group-hover:from-cyberpunk-yellow group-hover:to-white">{link.title}</h4>
+                  <div className="flex gap-1 items-center">
+                    <span className="text-[0.6rem] text-cyberpunk-yellow font-mono uppercase tracking-wide">{">>"}</span>
+                    <p className="text-xs text-gray-300 truncate">{link.description}</p>
+                  </div>
                 </div>
-                <div className={`${iconColor} text-xs`}>
-                  <i className="fas fa-external-link-alt"></i>
+                
+                {/* Link Icon */}
+                <div className={`${iconColor} text-xs group-hover:scale-110 transition-all`}>
+                  <i className="fas fa-arrow-right"></i>
                 </div>
               </motion.a>
             ))}

@@ -204,30 +204,40 @@ export default function Home() {
           </motion.section>
         </main>
 
-        {/* Footer */}
+        {/* Footer - Cyberpunk 2077 Style */}
         <motion.footer 
           className="w-full px-4 mt-12 text-center text-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          <div className="relative p-4 backdrop-blur-sm bg-gradient-to-b from-cyber-navy/40 to-transparent rounded-lg border border-neon-blue/10">
-            <p className="font-rajdhani text-gray-300">&copy; 2025 MA Almanshuriyah | <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue animate-pulse-slow">Cyberpunk Link Tree</span></p>
-
-            <div className="my-2 w-full h-px bg-gradient-to-r from-transparent via-neon-blue/50 to-transparent"></div>
-
-            <a href="#" className="inline-block font-orbitron text-xs uppercase tracking-wider text-gray-400 hover:text-neon-blue transition-colors group">
-              <span className="inline-flex items-center">
-                <i className="fas fa-hashtag mr-1 group-hover:scale-110 transition-transform"></i>
-                <span className="group-hover:tracking-wider transition-all">MA_Almanshuriyah2025</span>
-              </span>
-            </a>
-
-            {/* Decorative corner elements */}
-            <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-neon-blue/30"></div>
-            <div className="absolute top-0 right-0 w-4 h-4 border-r border-t border-neon-blue/30"></div>
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-l border-b border-neon-blue/30"></div>
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-neon-blue/30"></div>
+          <div className="relative p-4 backdrop-blur-sm bg-gradient-to-b from-cyber-navy/40 to-transparent cyberpunk2077-clip border border-cyberpunk-yellow/20 overflow-hidden">
+            {/* Cyberpunk 2077 Decorative Elements */}
+            <div className="absolute top-0 right-0 w-20 h-1 bg-cyberpunk-yellow"></div>
+            <div className="absolute bottom-0 left-0 w-20 h-1 bg-cyberpunk-red"></div>
+            <div className="absolute bottom-0 right-5 h-3 w-1 bg-cyberpunk-yellow"></div>
+            
+            {/* Cyberpunk 2077 Text */}
+            <div className="relative z-10">
+              <p className="font-mono text-xs text-cyberpunk-yellow mb-1 tracking-widest uppercase">SYSTEM//2025//SECURED_CONNECTION</p>
+              <p className="font-rajdhani text-gray-300">&copy; 2025 MA Almanshuriyah | <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyberpunk-yellow to-cyberpunk-red animate-pulse-slow">CYBERPUNK LINKTREE</span></p>
+              
+              <div className="my-2 w-full h-px bg-gradient-to-r from-transparent via-cyberpunk-yellow/30 to-transparent"></div>
+              
+              <div className="p-1 inline-block">
+                <a href="#" className="inline-block font-orbitron text-xs uppercase tracking-wider text-gray-400 hover:text-cyberpunk-yellow transition-colors group">
+                  <span className="inline-flex items-center">
+                    <i className="fas fa-hashtag mr-1 group-hover:scale-110 transition-transform"></i>
+                    <span className="group-hover:tracking-wider transition-all">MA_Almanshuriyah2025</span>
+                  </span>
+                </a>
+              </div>
+              
+              {/* Cyberpunk 2077 Status Text */}
+              <div className="mt-1 text-[0.6rem] font-mono text-gray-500 tracking-wider">
+                <span className="text-cyberpunk-yellow">STATUS:</span> ONLINE | <span className="text-cyberpunk-yellow">VERSION:</span> 2.0.7.7
+              </div>
+            </div>
           </div>
         </motion.footer>
       </div>
