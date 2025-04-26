@@ -87,7 +87,7 @@ const DropdownLinkCard: React.FC<DropdownLinkCardProps> = ({
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ x: 5, backgroundColor: 'rgba(13, 25, 48, 0.5)' }}
               >
-                <div className={`w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br ${iconBgFrom} ${iconBgTo} flex items-center justify-center opacity-80`}>
+                <div className={`w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br ${iconBgFrom} ${iconBgTo} flex items-center justify-center`}>
                   <i className={`fa${iconType === 'brand' ? 'b' : 's'} fa-${link.icon || icon} text-sm`}></i>
                 </div>
                 <div className="flex-grow">
