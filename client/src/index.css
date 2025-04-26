@@ -88,10 +88,12 @@
     @apply bg-cyber-dark text-white font-rajdhani;
     background-color: var(--cyber-dark);
     background-image: 
-      radial-gradient(circle at 30% 20%, rgba(0, 198, 255, 0.15) 0%, transparent 30%),
-      radial-gradient(circle at 70% 60%, rgba(255, 0, 166, 0.15) 0%, transparent 30%),
-      radial-gradient(circle at 40% 70%, rgba(255, 40, 60, 0.1) 0%, transparent 35%),
-      radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+      radial-gradient(circle at 30% 20%, rgba(25, 230, 255, 0.25) 0%, transparent 35%), /* Lebih cerah */
+      radial-gradient(circle at 70% 60%, rgba(255, 44, 196, 0.25) 0%, transparent 35%), /* Lebih cerah */
+      radial-gradient(circle at 20% 40%, rgba(255, 142, 54, 0.2) 0%, transparent 30%), /* Orange baru */
+      radial-gradient(circle at 40% 70%, rgba(255, 62, 82, 0.2) 0%, transparent 35%), /* Lebih cerah */
+      radial-gradient(circle at 80% 30%, rgba(0, 254, 253, 0.2) 0%, transparent 30%), /* Cyan baru */
+      radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
     background-attachment: fixed;
   }
 }
@@ -105,28 +107,38 @@
 }
 
 .neon-text-blue {
-  text-shadow: 0 0 5px rgba(0, 198, 255, 0.7), 0 0 10px rgba(0, 198, 255, 0.5);
-  color: #00c6ff;
+  text-shadow: 0 0 5px rgba(25, 230, 255, 0.8), 0 0 10px rgba(25, 230, 255, 0.6), 0 0 15px rgba(25, 230, 255, 0.4);
+  color: #19e6ff;
 }
 
 .neon-text-pink {
-  text-shadow: 0 0 5px rgba(255, 0, 166, 0.7), 0 0 10px rgba(255, 0, 166, 0.5);
-  color: #ff00a6;
+  text-shadow: 0 0 5px rgba(255, 44, 196, 0.8), 0 0 10px rgba(255, 44, 196, 0.6), 0 0 15px rgba(255, 44, 196, 0.4);
+  color: #ff2cc4;
 }
 
 .neon-text-green {
-  text-shadow: 0 0 5px rgba(0, 255, 143, 0.7), 0 0 10px rgba(0, 255, 143, 0.5);
-  color: #00ff8f;
+  text-shadow: 0 0 5px rgba(57, 255, 175, 0.8), 0 0 10px rgba(57, 255, 175, 0.6), 0 0 15px rgba(57, 255, 175, 0.4);
+  color: #39ffaf;
 }
 
 .neon-text-yellow {
-  text-shadow: 0 0 5px rgba(255, 230, 0, 0.7), 0 0 10px rgba(255, 230, 0, 0.5);
-  color: #ffe600;
+  text-shadow: 0 0 5px rgba(255, 238, 0, 0.8), 0 0 10px rgba(255, 238, 0, 0.6), 0 0 15px rgba(255, 238, 0, 0.4);
+  color: #ffee00;
 }
 
 .neon-text-red {
-  text-shadow: 0 0 5px rgba(255, 40, 60, 0.7), 0 0 10px rgba(255, 40, 60, 0.5);
-  color: #ff283c;
+  text-shadow: 0 0 5px rgba(255, 62, 82, 0.8), 0 0 10px rgba(255, 62, 82, 0.6), 0 0 15px rgba(255, 62, 82, 0.4);
+  color: #ff3e52;
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 5px rgba(0, 254, 253, 0.8), 0 0 10px rgba(0, 254, 253, 0.6), 0 0 15px rgba(0, 254, 253, 0.4);
+  color: #00fefd;
+}
+
+.neon-text-orange {
+  text-shadow: 0 0 5px rgba(255, 142, 54, 0.8), 0 0 10px rgba(255, 142, 54, 0.6), 0 0 15px rgba(255, 142, 54, 0.4);
+  color: #ff8e36;
 }
 
 .neon-text {
@@ -134,27 +146,35 @@
 }
 
 .shadow-neon-blue {
-  box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+  box-shadow: 0 0 10px rgba(25, 230, 255, 0.7), 0 0 20px rgba(25, 230, 255, 0.4);
 }
 
 .shadow-neon-pink {
-  box-shadow: 0 0 10px rgba(255, 0, 166, 0.5);
+  box-shadow: 0 0 10px rgba(255, 44, 196, 0.7), 0 0 20px rgba(255, 44, 196, 0.4);
 }
 
 .shadow-neon-green {
-  box-shadow: 0 0 10px rgba(0, 255, 143, 0.5);
+  box-shadow: 0 0 10px rgba(57, 255, 175, 0.7), 0 0 20px rgba(57, 255, 175, 0.4);
 }
 
 .shadow-neon-yellow {
-  box-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 238, 0, 0.7), 0 0 20px rgba(255, 238, 0, 0.4);
 }
 
 .shadow-neon-purple {
-  box-shadow: 0 0 10px rgba(153, 0, 255, 0.5);
+  box-shadow: 0 0 10px rgba(179, 71, 255, 0.7), 0 0 20px rgba(179, 71, 255, 0.4);
 }
 
 .shadow-neon-red {
-  box-shadow: 0 0 10px rgba(255, 40, 60, 0.5);
+  box-shadow: 0 0 10px rgba(255, 62, 82, 0.7), 0 0 20px rgba(255, 62, 82, 0.4);
+}
+
+.shadow-neon-cyan {
+  box-shadow: 0 0 10px rgba(0, 254, 253, 0.7), 0 0 20px rgba(0, 254, 253, 0.4);
+}
+
+.shadow-neon-orange {
+  box-shadow: 0 0 10px rgba(255, 142, 54, 0.7), 0 0 20px rgba(255, 142, 54, 0.4);
 }
 
 .grid-bg {

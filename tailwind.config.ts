@@ -15,14 +15,16 @@ export default {
         foreground: "hsl(var(--foreground))",
         "cyber-dark": "#0d1930",
         "cyber-navy": "#162138",
-        "cyber-blue": "#00c6ff",
-        "neon-blue": "#00c6ff",
-        "neon-pink": "#ff00a6",
-        "neon-purple": "#9900ff",
-        "neon-green": "#00ff8f",
-        "neon-yellow": "#ffe600", 
-        "cyberpunk-red": "#ff283c",
-        "cyberpunk-yellow": "#e5df12",
+        "cyber-blue": "#00d8ff", /* Lebih cerah */
+        "neon-blue": "#19e6ff", /* Lebih cerah */
+        "neon-pink": "#ff2cc4", /* Lebih cerah */
+        "neon-purple": "#b347ff", /* Lebih cerah */
+        "neon-green": "#39ffaf", /* Lebih cerah */
+        "neon-yellow": "#ffee00", /* Lebih cerah */
+        "cyberpunk-red": "#ff3e52", /* Lebih cerah */
+        "cyberpunk-yellow": "#f4ff00", /* Lebih cerah */
+        "cyberpunk-cyan": "#00fefd", /* Warna baru */
+        "cyberpunk-orange": "#ff8e36", /* Warna baru */
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
