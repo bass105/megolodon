@@ -4,11 +4,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { IntroSequence } from "@/components/IntroSequence";
 import { PortfolioHome } from "@/components/PortfolioHome";
 import NotFound from "@/pages/not-found";
+import Blog from "@/pages/Blog";
+import BlogDetail from "@/pages/BlogDetail";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={PortfolioHome} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogDetail} />
       <Route component={NotFound} />
     </Switch>
   );

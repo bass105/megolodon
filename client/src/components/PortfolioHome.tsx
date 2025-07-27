@@ -17,8 +17,10 @@ import {
   Sparkles,
   ChevronRight,
   Calendar,
-  Clock
+  Clock,
+  FileText
 } from 'lucide-react';
+import { Link } from 'wouter';
 
 interface LightEffect {
   x: number;
@@ -168,6 +170,10 @@ export function PortfolioHome() {
             <GlowButton>
               <BookOpen size={20} />
               Program Pendidikan
+            </GlowButton>
+            <GlowButton>
+              <FileText size={20} />
+              <Link href="/blog">Blog & Dokumentasi</Link>
             </GlowButton>
             <GlowButton>
               <Phone size={20} />
