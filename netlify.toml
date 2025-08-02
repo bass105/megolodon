@@ -1,13 +1,15 @@
 [build]
-  publish = "dist"
+  publish = "dist/public"
   command = "npm run build"
 
-[build.environment]
-  NODE_VERSION = "18"
+[dev]
+  command = "npm run dev"
+  port = 5000
+  targetPort = 5000
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server/:splat"
+  to = "/.netlify/functions/api/:splat"
   status = 200
 
 [[redirects]]
@@ -18,6 +20,5 @@
 [functions]
   directory = "netlify/functions"
 
-[dev]
-  command = "npm run dev"
-  port = 5000
+[build.environment]
+  NODE_VERSION = "20"

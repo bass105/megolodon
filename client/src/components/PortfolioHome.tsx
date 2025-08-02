@@ -18,9 +18,14 @@ import {
   ChevronRight,
   Calendar,
   Clock,
-  FileText
+  FileText,
+  Menu,
+  X
 } from 'lucide-react';
 import { Link } from 'wouter';
+import schoolCover from '@assets/school-cover.svg';
+import maLogo from '@assets/ma-logo.svg';
+import besLogo from '@assets/bes-logo.svg';
 
 interface LightEffect {
   x: number;
@@ -30,6 +35,7 @@ interface LightEffect {
 
 export function PortfolioHome() {
   const [lightEffects, setLightEffects] = useState<LightEffect[]>([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const lightIdRef = useRef(0);
 
   const createLightEffect = (event: React.MouseEvent) => {
@@ -57,7 +63,7 @@ export function PortfolioHome() {
     ...props 
   }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
     <motion.button
-      className={`relative overflow-hidden bg-gradient-to-r from-slate-800 to-slate-700 hover:from-blue-900 hover:to-purple-800 text-white px-6 py-3 rounded-lg border border-slate-600 hover:border-blue-400 transition-all duration-300 group ${className}`}
+      className={`relative overflow-hidden bg-gradient-to-r from-slate-800 to-slate-700 hover:from-blue-900 hover:to-purple-800 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg border border-slate-600 hover:border-blue-400 transition-all duration-300 group text-sm md:text-base ${className}`}
       whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(59, 130, 246, 0.3)" }}
       whileTap={{ scale: 0.98 }}
       onClick={(e) => {
@@ -91,38 +97,128 @@ export function PortfolioHome() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white overflow-x-hidden">
+      {/* Navigation Bar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-sm border-b border-slate-700/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <motion.div 
+              className="flex items-center gap-3"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <img src={maLogo} alt="MA Logo" className="w-10 h-10" />
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                MA Almanshuriyah
+              </span>
+            </motion.div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#home" className="text-slate-300 hover:text-blue-400 transition-colors">Beranda</a>
+              <a href="#about" className="text-slate-300 hover:text-blue-400 transition-colors">Tentang</a>
+              <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Kontak</a>
+              <Link href="/blog" className="text-slate-300 hover:text-blue-400 transition-colors">Blog</Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-slate-300 hover:text-blue-400 transition-colors"
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden bg-slate-800 border-t border-slate-700"
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <a href="#home" className="block px-3 py-2 text-slate-300 hover:text-blue-400 transition-colors">Beranda</a>
+              <a href="#about" className="block px-3 py-2 text-slate-300 hover:text-blue-400 transition-colors">Tentang</a>
+              <a href="#contact" className="block px-3 py-2 text-slate-300 hover:text-blue-400 transition-colors">Kontak</a>
+              <Link href="/blog" className="block px-3 py-2 text-slate-300 hover:text-blue-400 transition-colors">Blog</Link>
+            </div>
+          </motion.div>
+        )}
+      </nav>
+
       {/* Hero Section */}
       <motion.section 
-        className="relative min-h-screen flex items-center justify-center px-8"
+        id="home"
+        className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {/* Background elements */}
+        {/* Cover Image Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+          <img 
+            src={schoolCover} 
+            alt="School Cover" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-indigo-950/80" />
+          <div className="absolute top-1/4 left-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-blue-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-purple-500/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
+        <div className="relative z-10 text-center max-w-6xl mx-auto">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
+            {/* Profile Images Section */}
             <motion.div
-              className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 shadow-2xl"
-              whileHover={{ scale: 1.1, rotate: 360 }}
-              transition={{ duration: 0.5 }}
+              className="flex items-center justify-center gap-4 sm:gap-8 mb-8"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-                <GraduationCap size={48} className="text-blue-400" />
-              </div>
+              <motion.div
+                className="w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 shadow-2xl"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
+                  <img src={maLogo} alt="MA Logo" className="w-full h-full object-cover" />
+                </div>
+              </motion.div>
+              
+              <motion.div
+                className="w-20 h-20 sm:w-32 sm:h-32 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 shadow-2xl"
+                whileHover={{ scale: 1.1, rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
+                  <GraduationCap size={32} className="text-blue-400 sm:w-12 sm:h-12" />
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-red-500 to-orange-600 p-1 shadow-2xl"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
+                  <img src={besLogo} alt="BES Logo" className="w-full h-full object-cover" />
+                </div>
+              </motion.div>
             </motion.div>
             
             <motion.h1
-              className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent px-4"
               initial={{ scale: 0.5 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.2 }}
@@ -131,7 +227,7 @@ export function PortfolioHome() {
             </motion.h1>
             
             <motion.p
-              className="text-xl md:text-2xl text-slate-300 mb-8 font-light"
+              className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 font-light px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -140,44 +236,50 @@ export function PortfolioHome() {
             </motion.p>
             
             <motion.div
-              className="flex flex-wrap justify-center gap-4 mb-12"
+              className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-4"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <span className="px-4 py-2 bg-blue-500/20 rounded-full text-blue-300 border border-blue-500/30">
+              <span className="px-3 py-1 sm:px-4 sm:py-2 bg-blue-500/20 rounded-full text-blue-300 border border-blue-500/30 text-xs sm:text-sm">
                 Pendidikan Berkualitas
               </span>
-              <span className="px-4 py-2 bg-purple-500/20 rounded-full text-purple-300 border border-purple-500/30">
+              <span className="px-3 py-1 sm:px-4 sm:py-2 bg-purple-500/20 rounded-full text-purple-300 border border-purple-500/30 text-xs sm:text-sm">
                 Teknologi Modern
               </span>
-              <span className="px-4 py-2 bg-cyan-500/20 rounded-full text-cyan-300 border border-cyan-500/30">
+              <span className="px-3 py-1 sm:px-4 sm:py-2 bg-cyan-500/20 rounded-full text-cyan-300 border border-cyan-500/30 text-xs sm:text-sm">
                 Prestasi Membanggakan
               </span>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center gap-2 sm:gap-4 px-4"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.9 }}
           >
-            <GlowButton>
-              <User size={20} />
-              Tentang Kami
+            <GlowButton onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
+              <User size={16} className="sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">Tentang Kami</span>
+              <span className="sm:hidden">Tentang</span>
             </GlowButton>
             <GlowButton>
-              <BookOpen size={20} />
-              Program Pendidikan
+              <BookOpen size={16} className="sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">Program Pendidikan</span>
+              <span className="sm:hidden">Program</span>
             </GlowButton>
             <GlowButton>
-              <FileText size={20} />
-              <Link href="/blog">Blog & Dokumentasi</Link>
+              <FileText size={16} className="sm:w-5 sm:h-5" />
+              <Link href="/blog">
+                <span className="hidden sm:inline">Blog & Dokumentasi</span>
+                <span className="sm:hidden">Blog</span>
+              </Link>
             </GlowButton>
-            <GlowButton>
-              <Phone size={20} />
-              Hubungi Kami
+            <GlowButton onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Phone size={16} className="sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">Hubungi Kami</span>
+              <span className="sm:hidden">Kontak</span>
             </GlowButton>
           </motion.div>
         </div>
@@ -196,16 +298,17 @@ export function PortfolioHome() {
 
       {/* About Section */}
       <motion.section 
-        className="py-20 px-8"
+        id="about"
+        className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent px-4"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -213,15 +316,15 @@ export function PortfolioHome() {
               Tentang MA Almanshuriyah
             </motion.h2>
             <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-8"
+              className="w-16 sm:w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-8"
               initial={{ width: 0 }}
-              whileInView={{ width: 96 }}
+              whileInView={{ width: "96px" }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.3 }}
             />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -246,7 +349,7 @@ export function PortfolioHome() {
             </motion.div>
 
             <motion.div
-              className="grid grid-cols-2 gap-6"
+              className="grid grid-cols-2 gap-4 sm:gap-6"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -260,7 +363,7 @@ export function PortfolioHome() {
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-slate-700 text-center group hover:border-blue-400/50 transition-all duration-300"
+                  className="bg-slate-800/50 backdrop-blur-sm p-4 sm:p-6 rounded-lg border border-slate-700 text-center group hover:border-blue-400/50 transition-all duration-300"
                   whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)" }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -268,11 +371,11 @@ export function PortfolioHome() {
                   transition={{ delay: index * 0.1 }}
                 >
                   <stat.icon 
-                    size={32} 
-                    className={`mx-auto mb-3 text-${stat.color}-400 group-hover:scale-110 transition-transform duration-300`} 
+                    size={24} 
+                    className={`mx-auto mb-2 sm:mb-3 text-${stat.color}-400 group-hover:scale-110 transition-transform duration-300 sm:w-8 sm:h-8`} 
                   />
-                  <h4 className="text-2xl font-bold text-white mb-1">{stat.title}</h4>
-                  <p className="text-slate-400 text-sm">{stat.subtitle}</p>
+                  <h4 className="text-lg sm:text-2xl font-bold text-white mb-1">{stat.title}</h4>
+                  <p className="text-slate-400 text-xs sm:text-sm">{stat.subtitle}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -282,16 +385,17 @@ export function PortfolioHome() {
 
       {/* Contact & Social Section */}
       <motion.section 
-        className="py-20 px-8 bg-slate-900/50"
+        id="contact"
+        className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent px-4"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -300,7 +404,7 @@ export function PortfolioHome() {
             </motion.h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -340,8 +444,8 @@ export function PortfolioHome() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-semibold mb-6 text-center">Media Sosial</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-center">Media Sosial</h3>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { icon: Instagram, name: "Instagram", handle: "@besmatcha_", color: "pink" },
                   { icon: Facebook, name: "Facebook", handle: "MA Almanshuriyah", color: "blue" },
@@ -350,11 +454,11 @@ export function PortfolioHome() {
                 ].map((social, index) => (
                   <GlowButton
                     key={index}
-                    className="flex-col h-32 justify-center text-center group"
+                    className="flex-col h-24 sm:h-32 justify-center text-center group"
                   >
-                    <social.icon size={32} className="mb-2 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="text-sm font-medium">{social.name}</div>
-                    <div className="text-xs text-slate-400">{social.handle}</div>
+                    <social.icon size={24} className="mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300 sm:w-8 sm:h-8" />
+                    <div className="text-xs sm:text-sm font-medium">{social.name}</div>
+                    <div className="text-xs text-slate-400 hidden sm:block">{social.handle}</div>
                   </GlowButton>
                 ))}
               </div>
@@ -365,7 +469,7 @@ export function PortfolioHome() {
 
       {/* Footer */}
       <motion.footer 
-        className="py-12 px-8 border-t border-slate-800"
+        className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
