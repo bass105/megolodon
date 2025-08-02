@@ -1,0 +1,117 @@
+7:54:44 PM: build-image version: c440bb785c036c7461456dcbf56442db2c6157c7 (noble)
+7:54:44 PM: buildbot version: c440bb785c036c7461456dcbf56442db2c6157c7
+7:54:45 PM: Fetching cached dependencies
+7:54:45 PM: Failed to fetch cache, continuing with build
+7:54:45 PM: Starting to prepare the repo for build
+7:54:45 PM: No cached dependencies found. Cloning fresh repo
+7:54:45 PM: git clone --filter=blob:none https://github.com/bass105/ontarien
+7:54:45 PM: Preparing Git Reference refs/heads/main
+7:54:47 PM: Starting to install dependencies
+7:54:48 PM: Downloading and installing node v20.19.4...
+7:54:48 PM: Downloading https://nodejs.org/dist/v20.19.4/node-v20.19.4-linux-x64.tar.xz...
+7:54:49 PM: Computing checksum with sha256sum
+7:54:49 PM: Checksums matched!
+7:54:51 PM: Now using node v20.19.4 (npm v10.8.2)
+7:54:51 PM: Enabling Node.js Corepack
+7:54:51 PM: Started restoring cached build plugins
+7:54:51 PM: Finished restoring cached build plugins
+7:54:51 PM: Started restoring cached corepack dependencies
+7:54:51 PM: Finished restoring cached corepack dependencies
+7:54:51 PM: No npm workspaces detected
+7:54:51 PM: Started restoring cached node modules
+7:54:51 PM: Finished restoring cached node modules
+7:54:51 PM: Installing npm packages using npm version 10.8.2
+7:54:55 PM: npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+7:54:55 PM: npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+7:55:00 PM: added 483 packages in 9s
+7:55:00 PM: npm packages installed
+7:55:00 PM: Successfully installed dependencies
+7:55:00 PM: Starting build script
+7:55:01 PM: Detected 1 framework(s)
+7:55:01 PM: "vite" at version "5.4.15"
+7:55:01 PM: Section completed: initializing
+7:55:02 PM: ​
+7:55:02 PM: Netlify Build                                                 
+7:55:02 PM: ────────────────────────────────────────────────────────────────
+7:55:02 PM: ​
+7:55:02 PM: ❯ Version
+7:55:02 PM:   @netlify/build 35.0.0
+7:55:02 PM: ​
+7:55:02 PM: ❯ Flags
+7:55:02 PM:   accountId: 6885f93873853dd554edc328
+7:55:02 PM:   baseRelDir: true
+7:55:02 PM:   buildId: 688e0a9376be911012098263
+7:55:02 PM:   deployId: 688e0a9376be911012098265
+7:55:03 PM: ​
+7:55:03 PM: ❯ Current directory
+7:55:03 PM:   /opt/build/repo
+7:55:03 PM: ​
+7:55:03 PM: ❯ Config file
+7:55:03 PM:   /opt/build/repo/netlify.toml
+7:55:03 PM: ​
+7:55:03 PM: ❯ Context
+7:55:03 PM:   production
+7:55:03 PM: ​
+7:55:03 PM: build.command from netlify.toml                               
+7:55:03 PM: ────────────────────────────────────────────────────────────────
+7:55:03 PM: ​
+7:55:03 PM: $ npm run build
+7:55:03 PM: > rest-express@1.0.0 build
+7:55:03 PM: > vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+7:55:03 PM: vite v5.4.15 building for production...
+7:55:03 PM: transforming...
+7:55:03 PM: Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+7:55:03 PM:   npx update-browserslist-db@latest
+7:55:03 PM:   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+7:55:06 PM: ✓ 2006 modules transformed.
+7:55:06 PM: rendering chunks...
+7:55:06 PM: computing gzip size...
+7:55:06 PM: ../dist/public/index.html                                0.63 kB │ gzip:   0.38 kB
+7:55:06 PM: ../dist/public/assets/blog-documentation-D4hk1e1N.svg    4.16 kB │ gzip:   1.11 kB
+7:55:06 PM: ../dist/public/assets/index-BRPS3iYw.css               125.52 kB │ gzip:  20.01 kB
+7:55:06 PM: ../dist/public/assets/index-CjvldMPw.js                437.26 kB │ gzip: 137.24 kB
+7:55:06 PM: ✓ built in 2.91s
+7:55:06 PM:   dist/index.js  10.6kb
+7:55:06 PM: ⚡ Done in 6ms
+7:55:06 PM: ​
+7:55:06 PM: (build.command completed in 3.4s)
+7:55:06 PM: ​
+7:55:06 PM: Functions bundling                                            
+7:55:06 PM: ────────────────────────────────────────────────────────────────
+7:55:06 PM: ​
+7:55:06 PM: Packaging Functions from netlify/functions directory:
+7:55:06 PM:  - api.js
+7:55:06 PM:  - server.ts
+7:55:06 PM: ​
+7:55:06 PM: ​
+7:55:06 PM: Dependencies installation error                               
+7:55:06 PM: ────────────────────────────────────────────────────────────────
+7:55:06 PM: ​
+7:55:06 PM:   Error message
+7:55:06 PM:   A Netlify Function failed to require one of its dependencies.
+7:55:06 PM:   Please make sure it is present in the site's top-level "package.json".
+​
+7:55:06 PM:   In file "/opt/build/repo/netlify/functions/api.js"
+7:55:06 PM:   Cannot find module './vite' from '/opt/build/repo/server'
+7:55:06 PM: ​
+7:55:06 PM:   Resolved config
+7:55:06 PM:   build:
+7:55:06 PM:     command: npm run build
+7:55:06 PM:     commandOrigin: config
+7:55:06 PM:     environment:
+7:55:06 PM:       - NODE_VERSION
+7:55:06 PM:     publish: /opt/build/repo/dist/public
+7:55:06 PM:     publishOrigin: config
+7:55:06 PM:   functionsDirectory: /opt/build/repo/netlify/functions
+7:55:06 PM:   redirects:
+7:55:07 PM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+7:55:07 PM:     - from: /api/*
+      status: 200
+      to: /.netlify/functions/api/:splat
+    - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+7:55:07 PM: Build failed due to a user error: Build script returned non-zero exit code: 2
+7:55:07 PM: Failing build: Failed to build site
+7:55:07 PM: Finished processing build request in 22.283s

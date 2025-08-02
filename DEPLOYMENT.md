@@ -107,7 +107,8 @@ Setelah deploy, Anda akan mendapat URL gratis seperti:
 
 ### Jika API tidak bekerja:
 1. Cek functions folder di Netlify dashboard
-2. Pastikan file `netlify/functions/server.ts` ter-build dengan benar
+2. Pastikan file `netlify/functions/api.js` ter-build dengan benar
+3. Cek redirect configuration: `/api/*` → `/.netlify/functions/api/:splat`
 
 ## Support
 Jika ada masalah, silakan hubungi developer atau cek dokumentasi Netlify.
