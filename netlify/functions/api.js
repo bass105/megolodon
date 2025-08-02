@@ -1,4 +1,5 @@
-import { handler } from '../../dist/index.js';
-import serverless from 'serverless-http';
+const serverless = require('serverless-http');
+const { app } = require('../../server/index.ts');
 
-export { handler };
+const handler = serverless(app);
+module.exports = { handler };

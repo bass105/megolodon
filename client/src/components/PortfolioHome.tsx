@@ -26,6 +26,8 @@ import { Link } from 'wouter';
 import schoolCover from '@assets/school-cover.svg';
 import maLogo from '@assets/ma-logo.svg';
 import besLogo from '@assets/bes-logo.svg';
+import educationPrograms from '@assets/education-programs.svg';
+import blogDocumentation from '@assets/blog-documentation.svg';
 
 interface LightEffect {
   x: number;
@@ -296,10 +298,196 @@ export function PortfolioHome() {
         </motion.div>
       </motion.section>
 
+      {/* Education Programs Section */}
+      <motion.section 
+        className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <motion.h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent px-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Program Pendidikan
+            </motion.h2>
+            <motion.div
+              className="w-16 sm:w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mb-8"
+              initial={{ width: 0 }}
+              whileInView={{ width: "96px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3 }}
+            />
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative">
+                <img 
+                  src={educationPrograms} 
+                  alt="Program Pendidikan" 
+                  className="w-full h-auto rounded-lg shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-green-500/20 to-blue-500/20 rounded-lg" />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-white">
+                Pendidikan Berkualitas Tinggi
+              </h3>
+              <p className="text-slate-300 mb-6 text-sm sm:text-base leading-relaxed">
+                MA Almanshuriyah menyediakan program pendidikan yang komprehensif dengan menggabungkan 
+                kurikulum nasional dan nilai-nilai Islam. Kami berkomitmen untuk menghasilkan lulusan 
+                yang tidak hanya cerdas secara akademik, tetapi juga berakhlak mulia.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {[
+                  { icon: BookOpen, title: "Kurikulum Terintegrasi", desc: "Nasional + Islam" },
+                  { icon: Users, title: "Kelas Kecil", desc: "Perhatian Personal" },
+                  { icon: Award, title: "Prestasi Gemilang", desc: "Akademik & Non-Akademik" },
+                  { icon: GraduationCap, title: "Lulusan Berkualitas", desc: "Siap Perguruan Tinggi" }
+                ].map((program, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-start gap-3 p-3 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 transition-colors duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <program.icon size={20} className="text-green-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-white text-sm">{program.title}</h4>
+                      <p className="text-slate-400 text-xs">{program.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <GlowButton className="w-full sm:w-auto">
+                <ExternalLink size={16} className="sm:w-5 sm:h-5" />
+                Lihat Program Lengkap
+              </GlowButton>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Blog & Documentation Section */}
+      <motion.section 
+        className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <motion.h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent px-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Blog & Dokumentasi
+            </motion.h2>
+            <motion.div
+              className="w-16 sm:w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-500 mx-auto mb-8"
+              initial={{ width: 0 }}
+              whileInView={{ width: "96px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3 }}
+            />
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-white">
+                Informasi & Berita Terkini
+              </h3>
+              <p className="text-slate-300 mb-6 text-sm sm:text-base leading-relaxed">
+                Ikuti perkembangan terbaru MA Almanshuriyah melalui blog dan dokumentasi digital kami. 
+                Temukan berita kegiatan sekolah, prestasi siswa, artikel pendidikan, dan panduan 
+                untuk orang tua dan siswa.
+              </p>
+
+              <div className="space-y-4 mb-6">
+                {[
+                  { icon: Calendar, title: "Kegiatan Sekolah", desc: "Update acara dan kegiatan terbaru" },
+                  { icon: Award, title: "Prestasi Siswa", desc: "Pencapaian dan penghargaan" },
+                  { icon: FileText, title: "Artikel Pendidikan", desc: "Tips dan panduan belajar" },
+                  { icon: Clock, title: "Pengumuman", desc: "Informasi penting terkini" }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-start gap-3 p-3 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 transition-colors duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <item.icon size={20} className="text-purple-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-white text-sm">{item.title}</h4>
+                      <p className="text-slate-400 text-xs">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <Link href="/blog">
+                <GlowButton className="w-full sm:w-auto">
+                  <FileText size={16} className="sm:w-5 sm:h-5" />
+                  Kunjungi Blog
+                </GlowButton>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative">
+                <img 
+                  src={blogDocumentation} 
+                  alt="Blog & Dokumentasi" 
+                  className="w-full h-auto rounded-lg shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 rounded-lg" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* About Section */}
       <motion.section 
         id="about"
-        className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8"
+        className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
